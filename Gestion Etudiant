@@ -1,0 +1,50 @@
+Program GestionEtude;
+Type Tdate = record
+              jour : 1..31;
+              mois : 1..12;
+              annee : 1900..2010;
+      end;
+Type TEtud = record
+              Matricule : integer;
+              Nom : string;
+              prenom: string;
+              naissance : Tdate;
+              note : array[1..7] of integer; // 7 est le nombre des module
+      end;
+var
+  Etudiants : array[1..1500] of TEtud;
+  choix : 1..3;
+
+procedure Saisie(numEtudiant:integer);
+begin
+  writeln('Saisie etudiant');
+  write('Entrez le matricule etudiant : ');
+  readln(Etudiants[numEtudiant].Matricule);
+  write('Entrez le nom etudiant : ');
+  readln(Etudiants[numEtudiant].nom);
+  write('Entrez le prenom etudiant : ');
+  readln(Etudiants[numEtudiant].prenom);
+  writeln('Entrez la date naissance etudiant : ');
+  write('Jour: ');
+  readln(Etudiants[numEtudiant].naissance.jour);
+  write('mois: ');
+  readln(Etudiants[numEtudiant].naissance.mois);
+  write('annee: ');
+  readln(Etudiants[numEtudiant].naissance.annee);
+  writeln(' Etudiant saisei avec succes');
+end;
+
+begin
+    writeln('Gestion des étudiants :');
+    writeln(' 1. Saisie des étudiants');
+    writeln(' 2. Affichage des etudiants');
+    writeln(' 3. Rechercher des étudiants');
+    write('votre chiox est : ');
+    readln(choix);
+    case (choix) of
+          1: Saisie(1); // 1 est l'etdiant numro 1
+          2: writeln(' 2. Affichage des etudiants');
+          3: writeln(' 3. Rechercher des étudiants')
+          else writeln('svp enter une bon choix');
+    end; // end of case 
+end.
