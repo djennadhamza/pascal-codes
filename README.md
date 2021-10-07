@@ -1,2 +1,4 @@
 # pascal-codes
-some pascal hany codes for studants 
+Some pascal handy codes for studants 
+
+This Repository is deprecated. 
